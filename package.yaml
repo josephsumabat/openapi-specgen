@@ -1,0 +1,31 @@
+verbatim:
+  cabal-version: 3.0
+
+name:    openapi-specgen
+version: "0"
+
+dependencies:
+  - base
+  - template-haskell
+  - openapi3
+  
+library:
+  source-dirs: src
+
+
+executables:
+  openapi-specgen:
+    main: Main.hs
+    source-dirs:
+      - app
+
+tests:
+  test:
+    main: Main.hs
+    source-dirs:
+      - test
+    dependencies:
+    - QuickCheck
+    - hspec
+
+
