@@ -8,16 +8,21 @@ dependencies:
   - base
   - template-haskell
   - openapi3
+  - text
+  - aeson
+  - insert-ordered-containers
+  - lens
   
 library:
   source-dirs: src
-
 
 executables:
   openapi-specgen:
     main: Main.hs
     source-dirs:
       - app
+    dependencies:
+    - openapi-specgen
 
 tests:
   test:

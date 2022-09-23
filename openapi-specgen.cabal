@@ -1,6 +1,6 @@
 cabal-version: 3.0
 
--- This file has been generated from package.yaml by hpack version 0.34.7.
+-- This file has been generated from package.yaml by hpack version 0.35.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -11,8 +11,16 @@ build-type:     Simple
 library
   exposed-modules:
       Data.OpenApi.Gen
+      Lib
       MyLib
+      OpenApiParse
       Tst
+      Types
+      Types.OpenApiSpec
+      Types.Operation
+      Types.Parameter
+      Types.Response
+      Types.Tags
   other-modules:
       Paths_openapi_specgen
   autogen-modules:
@@ -20,9 +28,13 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base
+      aeson
+    , base
+    , insert-ordered-containers
+    , lens
     , openapi3
     , template-haskell
+    , text
   default-language: Haskell2010
 
 executable openapi-specgen
@@ -34,9 +46,14 @@ executable openapi-specgen
   hs-source-dirs:
       app
   build-depends:
-      base
+      aeson
+    , base
+    , insert-ordered-containers
+    , lens
+    , openapi-specgen
     , openapi3
     , template-haskell
+    , text
   default-language: Haskell2010
 
 test-suite test
@@ -50,8 +67,12 @@ test-suite test
       test
   build-depends:
       QuickCheck
+    , aeson
     , base
     , hspec
+    , insert-ordered-containers
+    , lens
     , openapi3
     , template-haskell
+    , text
   default-language: Haskell2010
